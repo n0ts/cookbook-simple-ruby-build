@@ -9,6 +9,13 @@ Requirements
 - Ubuntu
 
 
+Recipes
+----------
+
+- `rbenv_dir` - create rbenv prefix directory
+- `default` - default
+
+
 Attributes
 ----------
 See `attributes/default.rb` for default values.
