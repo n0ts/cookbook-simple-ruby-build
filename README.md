@@ -5,8 +5,8 @@ Build ruby via rbenv + ruby-build, upload rbenv directory to your S3.
 
 Requirements
 ------------
-## Platforms
-- Ubuntu
+### Platforms
+Ubuntu
 
 
 Attributes
@@ -26,4 +26,4 @@ Use [`berkshelf-ruby-build`](https://github.com/n0ts/berkshelf-ruby-build/).
 
 License and Authors
 -------------------
-- Author:: Naoya Nakazawa (<me@n0ts.org>)
+Author:: Naoya Nakazawa (<me@n0ts.org>)
