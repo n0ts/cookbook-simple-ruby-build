@@ -1,68 +1,29 @@
 cookbook-simple-ruby-build Cookbook
 ===================================
-TODO: Enter the cookbook description here.
+Build ruby via rbenv + ruby-build, upload rbenv directory to your S3.
 
-e.g.
-This cookbook makes your favorite breakfast sandwhich.
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
+## Platforms
+- Ubuntu
 
-e.g.
-#### packages
-- `toaster` - cookbook-simple-ruby-build needs toaster to brown your bagel.
 
 Attributes
 ----------
-TODO: List you cookbook attributes here.
+See `attributes/default.rb` for default values.
 
-e.g.
-#### cookbook-simple-ruby-build::default
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['cookbook-simple-ruby-build']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
+`node['simple-ruby-build']['ruby_version']` - install ruby version, default 2.0.0-p247
+`node['simple-ruby-build']['aws_region']` - your S3 region, default us-east-1
+`node['simple-ruby-build']['aws_s3_bucket']` - your S3 bucket name, default simple-ruby-build
+`node['simple-ruby-build']['auto_shutodwn']` - auto vm shutdown, default true
+
 
 Usage
 -----
-#### cookbook-simple-ruby-build::default
-TODO: Write usage instructions for each cookbook.
+Use [`berkshelf-ruby-build`](https://github.com/n0ts/berkshelf-ruby-build/).
 
-e.g.
-Just include `cookbook-simple-ruby-build` in your node's `run_list`:
-
-```json
-{
-  "name":"my_node",
-  "run_list": [
-    "recipe[cookbook-simple-ruby-build]"
-  ]
-}
-```
-
-Contributing
-------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
-
-e.g.
-1. Fork the repository on Github
-2. Create a named feature branch (like `add_component_x`)
-3. Write you change
-4. Write tests for your change (if applicable)
-5. Run the tests, ensuring they all pass
-6. Submit a Pull Request using Github
 
 License and Authors
 -------------------
-Authors: TODO: List authors
+- Author:: Naoya Nakazawa (<me@n0ts.org>)
