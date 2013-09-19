@@ -6,7 +6,7 @@ Build ruby via rbenv + ruby-build, upload rbenv directory to your S3.
 Requirements
 ------------
 ### Platforms
-Ubuntu
+- Ubuntu
 
 
 Attributes
