@@ -20,7 +20,7 @@ Attributes
 ----------
 See `attributes/default.rb` for default values.
 
-- `node['simple-ruby-build']['ruby_version']` - install ruby version, default 2.0.0-p247
+- `node['simple-ruby-build']['ruby_version']` - install ruby version, default 2.0.0-p253
 - `node['simple-ruby-build']['aws_region']` - your S3 region, default us-east-1
 - `node['simple-ruby-build']['aws_s3_bucket']` - your S3 bucket name, default simple-ruby-build
 - `node['simple-ruby-build']['auto_shutodwn']` - auto vm shutdown, default true
