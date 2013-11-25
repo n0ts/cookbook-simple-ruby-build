@@ -49,13 +49,13 @@ bash "sync-to-s3" do
   user node[:rbenv][:user]
   group node[:rbenv][:group]
   cwd node[:rbenv][:install_prefix]
+  environment ({ "AWS_DEFAULT_REGION" => node["simple-ruby-build"]["aws_region"] })
   code <<-EOH
-  tar cf /tmp/rbenv-#{node["simple-ruby-build"]["ruby_version"]}.tar.gz \
-    --use-compress-prog=pigz ./rbenv
-  aws s3 --region=#{node["simple-ruby-build"]["aws_region"]} \
-    cp \
-      /tmp/rbenv-#{node["simple-ruby-build"]["ruby_version"]}.tar.gz \
-      s3://#{node["simple-ruby-build"]["aws_s3_bucket"]}/
+tar cf /tmp/rbenv-#{node["simple-ruby-build"]["ruby_version"]}.tar.gz \
+  --use-compress-prog=pigz ./rbenv
+aws s3 cp \
+    /tmp/rbenv-#{node["simple-ruby-build"]["ruby_version"]}.tar.gz \
+    s3://#{node["simple-ruby-build"]["aws_s3_bucket"]}/
 EOH
   not_if { ::File.exists?("/tmp/rbenv-#{node["simple-ruby-build"]["ruby_version"]}.tar.gz") }
 end
